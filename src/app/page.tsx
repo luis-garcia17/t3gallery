@@ -12,7 +12,15 @@ async function Images() {
     <div className="flex flex-wrap gap-4">
       {images.map((image) => (
         <div key={image.id} className="w-48">
-          <Image src={image.url} alt={image.name} objectFit="fill" width={300} height={300} />
+          <Link href={`/img/${image.id}`}>
+            <Image
+              src={image.url}
+              alt={image.name}
+              objectFit="fill"
+              width={300}
+              height={300}
+            />
+          </Link>
           <div className="overflow-hidden">{image.name}</div>
         </div>
       ))}
